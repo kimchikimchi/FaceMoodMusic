@@ -60,9 +60,7 @@ body {
     margin: 0 auto;
   }
   
-  #main-intro,
-  #contact-info,
-  #bio-image {
+  #intro-image {
     float: left;
   }
   
@@ -70,7 +68,7 @@ body {
     width: 70%;
   }
   
-  #song-list {
+  #songs {
     width: 30%;
   }
   
