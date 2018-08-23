@@ -6,7 +6,9 @@ Experiment with deleting lines of code from the CSS to see how it affects the we
 
 body {
 
-    background-image: url("../Images/bg-image.jpg");
+    /* background-image: url("../Images/bg-image3.jpg"); */
+    background-image: url('../Images/bg-image4.gif');
+    background-size: cover;
     /* Box-model */
     padding: 0;
   

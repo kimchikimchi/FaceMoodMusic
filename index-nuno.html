@@ -1,54 +1,79 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-    <head>
-        <!-- Required Meta Tags -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta charset="utf-8">
-        <!-- CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link rel="stylesheet" href="assets/css/reset.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <title>Facemood Music</title>
-    </head>
 
-    <body> 
-        <!-- Importing Various JS Libs -->
-        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-        <script type="text/javascript" src="assets/javascript/camera.js"></script>
-        <script type="text/javascript" src="assets/javascript/face.js"></script>
-        <script type="text/javascript" src="assets/javascript/music.js"></script>
+<head>
+  <!-- Required Meta Tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Facemood Music</title>
+</head>
 
-        <header>
-            <h1>Welcome to Face Mood Music Selector</h1>
-          </header>
-        
-          <div class="container">
-        
-            <section id="main-intro">
-        
-              <h2>Smile!</h2>
-              <img src="assets/Images/placeHolderImage.jpeg" alt="Your Image" id="intro-image">
-              <p>This app will take your picture, analyse it and play songs according to your mood.  Please allow us to interact with your camera and snap your picture</p>
-        
-            </section>
-        
-            <section>
-        
-              <h3>Song selection provided by Pandora:</h3>
-        
-              <ul id="songs">
-                <li><strong>Song 1</strong> <a href="" alt="Song 1"></a></li>
-                <li><strong>Song 2</strong> <a href="" alt="Song 2"></a></li>
-                <li><strong>Song 3</strong> <a href="" alt="Song 3"></a></li>
-                <li><strong>Song 4</strong> <a href="" alt="Song 4"></a></li>
-                <li><strong>Song 5</strong> <a href="" alt="Song 5"></a></li>
-              </ul>
-        
-            </section>
-        
-          </div>
+<body>
+  <!-- Importing Various JS Libs -->
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <script type="text/javascript" src="assets/javascript/camera.js"></script>
+  <script type="text/javascript" src="assets/javascript/face.js"></script>
+  <script type="text/javascript" src="assets/javascript/music.js"></script>
+
+  <header>
+    <h1>Welcome to Face Mood Music Selector</h1>
+  </header>
+
+  <div class="container">
+
+    <section id="main-intro">
+      <div class="row">
+
+        <h2>Smile!</h2>
+        <img src="assets/Images/placeHolderImage.jpeg" alt="Your Image" id="intro-image">
+        <p>This app will take your picture, analyse it and play songs according to your mood. Please allow us to interact with
+          your camera and snap your picture</p>
+      </div>
+
+    </section>
+
+    <section>
+      <div class="row">
+
+        <h3>Song selection provided by Pandora:</h3>
+      </div>
+      <div class="row">
+
+        <ul id="songs">
+          <li>
+            <strong>Song 1</strong>
+            <a href="" alt="Song 1"></a>
+          </li>
+          <li>
+            <strong>Song 2</strong>
+            <a href="" alt="Song 2"></a>
+          </li>
+          <li>
+            <strong>Song 3</strong>
+            <a href="" alt="Song 3"></a>
+          </li>
+          <li>
+            <strong>Song 4</strong>
+            <a href="" alt="Song 4"></a>
+          </li>
+          <li>
+            <strong>Song 5</strong>
+            <a href="" alt="Song 5"></a>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+  </div>
 
 
 
@@ -62,5 +87,6 @@
 
 
 
-    </body>
+</body>
+
 </html>
