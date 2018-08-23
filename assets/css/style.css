@@ -35,9 +35,7 @@ Experiment with deleting lines of code from the CSS to see how it affects the we
 */
 
 body {
-
-    /* background-image: url("../Images/bg-image3.jpg"); */
-    background-image: url('../Images/bg-image4.gif');
+    /* background-image: url('../Images/bg-image3.gif'); */
     background-size: cover;
     /* Box-model */
     padding: 0;
@@ -50,10 +48,35 @@ body {
     font-size: 18px;
     line-height: 150%;
     color: #333;
-
+    margin: auto;
+    max-width: 960px;
   
     /* Visual */
-  }
+
+      animation: colorchange 50s; /* animation-name followed by duration in seconds*/
+         /* you could also use milliseconds (ms) or something like 2.5s */
+      -webkit-animation: colorchange 50s; /* Chrome and Safari */
+    }
+
+    @keyframes colorchange
+    {
+      0%   {background: rgb(241, 209, 209);}
+      25%  {background: rgb(243, 243, 219);}
+      50%  {background: rgb(220, 220, 241);}
+      75%  {background: rgb(215, 241, 215);}
+      100%   {background: rgb(238, 217, 217);}
+    }
+
+    @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+    {
+      0%   {background: rgb(241, 209, 209);}
+      25%  {background: rgb(243, 243, 219);}
+      50%  {background: rgb(220, 220, 241);}
+      75%  {background: rgb(215, 241, 215);}
+      100%   {background: rgb(238, 217, 217);}
+      }
+
+  
   
   header {
     background: #d21034;
@@ -100,8 +123,9 @@ body {
     width: 70%;
   }
   
-  #songs {
+  .col-md-8 {
     width: 30%;
+    background-image: url("../Images/bg-image4.gif")
   }
   
   #intro-image {
@@ -113,4 +137,9 @@ body {
   
     margin-right: 20px;
   }
-  
+
+  #spinning-head-image {
+    max-width: 300px;
+    float: left
+  }
+
