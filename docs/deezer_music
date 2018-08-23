@@ -1,0 +1,72 @@
+https://market.mashape.com/deezerdevs/deezer-1#-search
+
+Just requires x-mashape-key.
+
+curl --get --include 'https://deezerdevs-deezer.p.mashape.com/search?q=happy' \
+  -H 'X-Mashape-Key: X5MJlUMUCkmshf6HrBRNBXlx0XEzp1JPUi5jsnQAcws16kSuXo' \
+  -H 'Accept: text/plain'
+
+
+
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Encoding: gzip
+Content-Length: 4415
+Content-Type: application/json; charset=utf-8
+Date: Wed, 22 Aug 2018 23:36:59 GMT
+P3p: policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+Server: Mashape/5.0.6
+Vary: Accept-Encoding
+X-Host: blm-web-16
+
+{
+  "data": [
+    {
+      "id": 525343612,
+      "readable": true,
+      "title": "Eastside",
+      "title_short": "Eastside",
+      "title_version": "",
+      "link": "https://www.deezer.com/track/525343612",
+      "duration": 173,
+      "rank": 920831,
+      "explicit_lyrics": false,
+      "preview": "https://cdns-preview-d.dzcdn.net/stream/c-dcd82bcbea29804cf200ba91d6ddf702-4.mp3",
+      "artist": {
+        "id": 1547598,
+        "name": "Benny Blanco",
+        "link": "https://www.deezer.com/artist/1547598",
+        "picture": "https://api.deezer.com/artist/1547598/image",
+        "picture_small": "https://e-cdns-images.dzcdn.net/images/artist//56x56-000000-80-0-0.jpg",
+        "picture_medium": "https://e-cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+        "picture_big": "https://e-cdns-images.dzcdn.net/images/artist//500x500-000000-80-0-0.jpg",
+        "picture_xl": "https://e-cdns-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg",
+        "tracklist": "https://api.deezer.com/artist/1547598/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": 67820782,
+        "title": "Eastside",
+        "cover": "https://api.deezer.com/album/67820782/image",
+        "cover_small": "https://e-cdns-images.dzcdn.net/images/cover/3ef48b681b594d6b3e36dced51207f69/56x56-000000-80-0-0.jpg",
+        "cover_medium": "https://e-cdns-images.dzcdn.net/images/cover/3ef48b681b594d6b3e36dced51207f69/250x250-000000-80-0-0.jpg",
+        "cover_big": "https://e-cdns-images.dzcdn.net/images/cover/3ef48b681b594d6b3e36dced51207f69/500x500-000000-80-0-0.jpg",
+        "cover_xl": "https://e-cdns-images.dzcdn.net/images/cover/3ef48b681b594d6b3e36dced51207f69/1000x1000-000000-80-0-0.jpg",
+        "tracklist": "https://api.deezer.com/album/67820782/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": 527894901,
+      "readable": true,
+      "title": "Happy Now",
+      "title_short": "Happy Now",
+      "title_version": "",
+      "link": "https://www.deezer.com/track/527894901",
+      "duration": 207,
+      "rank": 792884,
+      "explicit_lyrics": false,
+      "preview": "https://cdns-preview-f.dzcdn.net/stream/c-f4b3c1ba3b94da21ca402d2a3e54d168-4.mp3",
+      "artist": {
+        "id": 1198612,
