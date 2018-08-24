@@ -12,6 +12,10 @@
     float:left;
 }
 
+#songs a{
+  background-color: rgba(0,0,0,0.2);
+}
+
 #myOnlineCamera button {
     clear:both;
     margin:30px;
@@ -19,13 +23,14 @@
 
 #container {
     margin: 0px auto;
-    width: 500px;
-    height: 375px;
+    width: 200px;
+    height: 200px;
+    padding: 0px;
     border: 10px #333 solid;
 }
 #videoElement {
-    width: 500px;
-    height: 375px;
+    width: 200px;
+    height: 200px;
     background-color: #666;
 }
 /*
@@ -53,30 +58,28 @@ body {
   
     /* Visual */
 
-      animation: colorchange 50s; /* animation-name followed by duration in seconds*/
+      animation: colorchange 50s infinite; /* animation-name followed by duration in seconds*/
          /* you could also use milliseconds (ms) or something like 2.5s */
-      -webkit-animation: colorchange 50s; /* Chrome and Safari */
+      -webkit-animation: colorchange 50s infinite; /* Chrome and Safari */
     }
 
     @keyframes colorchange
     {
-      0%   {background: rgb(241, 209, 209);}
-      25%  {background: rgb(243, 243, 219);}
-      50%  {background: rgb(220, 220, 241);}
-      75%  {background: rgb(215, 241, 215);}
-      100%   {background: rgb(238, 217, 217);}
+      0%   {background: rgb(243, 191, 191);}
+      25%  {background: rgb(248, 248, 194);}
+      50%  {background: rgb(196, 196, 245);}
+      75%  {background: rgb(195, 247, 195);}
+      100%   {background: rgb(238, 200, 200);}
     }
 
     @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
     {
-      0%   {background: rgb(241, 209, 209);}
-      25%  {background: rgb(243, 243, 219);}
-      50%  {background: rgb(220, 220, 241);}
-      75%  {background: rgb(215, 241, 215);}
-      100%   {background: rgb(238, 217, 217);}
-      }
-
-  
+      0%   {background: rgb(243, 191, 191);}
+      25%  {background: rgb(248, 248, 194);}
+      50%  {background: rgb(196, 196, 245);}
+      75%  {background: rgb(195, 247, 195);}
+      100%   {background: rgb(238, 200, 200);}
+    }
   
   header {
     background: #d21034;
@@ -103,10 +106,6 @@ body {
     font-size: 24px;
   }
   
-  a {
-    color: #d21034;
-  }
-  
   .container {
     /* Box-model */
     width: 1024px;
@@ -125,7 +124,7 @@ body {
   
   .col-md-8 {
     width: 30%;
-    background-image: url("../Images/bg-image4.gif")
+    /* background-image: url("../Images/bg-image4.gif") */
   }
   
   #intro-image {
