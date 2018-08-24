@@ -8,8 +8,9 @@ curl --get --include 'https://deezerdevs-deezer.p.mashape.com/search?q=happy' \
 */
 
 var playList = [];
+var currentSongNum = undefined;
 var audio = document.createElement("audio");
-var previousSongID = undefined;
+
 
 function drawSongList(song) {
     var a = $('<a href="#" class="list-group-item list-group-item-action">');
@@ -60,15 +61,53 @@ $.ajax({
 // Based on audio play logic at https://stackoverflow.com/questions/8489710/play-an-audio-file-using-jquery-when-a-button-is-clicked
 
 function loadNextSong() {
-    var song = playList.shift();
-    audio.setAttribute("src", song.preview_url);
+    var song;
 
-    // Un-highlight previous song in the play list
-    $("#song_" + previousSongID).removeClass("active");
-    // Highlight the song in the song list.
-    $("#song_" + song.id).addClass("active");
-    previousSongID = song.id;
+    // Prevent the selection goes past the end of the list.
+    if (currentSongNum === playList.length - 1) {
+        return;
+    }
+
+    // For when the list is played for the first time.  Ugly.
+    if (currentSongNum == undefined ) {
+        currentSongNum = 0;
+        song = playList[currentSongNum];
+        // Highlight the song in the song list.
+        $("#song_" + song.id).addClass("active");
+        audio.setAttribute("src", song.preview_url);
+    } else if (currentSongNum >= 0) {
+
+        song = playList[currentSongNum];
+        // Un-highlight previous song in the play list
+        $("#song_" + song.id).removeClass("active");
+
+        currentSongNum++;
+        song = playList[currentSongNum];
+
+        // Highlight the song in the song list.
+        $("#song_" + song.id).addClass("active");
+        audio.setAttribute("src", song.preview_url);
+    }
 }
+
+function loadPreviousSong() {
+    var song;
+    console.log("Current song number is " + currentSongNum);
+
+    // No song before first song?
+    if (currentSongNum > 0 ) {
+        song = playList[currentSongNum];
+        $("#song_" + song.id).removeClass("active");
+
+        currentSongNum--;
+
+        song = playList[currentSongNum];
+        $("#song_" + song.id).addClass("active");
+        audio.setAttribute("src", song.preview_url);
+
+    }
+}
+
 
 $("#playBtn").on("click", function(event) {
     // When music is simply paused before,
@@ -82,6 +121,18 @@ $("#playBtn").on("click", function(event) {
 
 $("#pauseBtn").on("click", function(event) {
     audio.pause();
+});
+
+$("#prevBtn").on("click", function(event){
+    audio.pause();
+    loadPreviousSong();
+    audio.play();
+});
+
+$("#nextBtn").on("click", function(event){
+    audio.pause();
+    loadNextSong();
+    audio.play();
 });
 
 // When the current song is over, play next
