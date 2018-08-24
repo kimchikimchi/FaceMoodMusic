@@ -1,34 +1,71 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <!-- Required Meta Tags -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta charset="utf-8">
-        <!-- CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <title>Facemood Music</title>
-    </head>
-    <body>
-            <!--div id="myOnlineCamera">
-                    <video></video>
-                    <canvas></canvas>
-                    <button>Take Photo!</button>
-                </div-->
+<html lang="en-us" dir="ltr">
 
-                <div id="container">
-                        <video autoplay="true" id="videoElement">
-                         
-                        </video>
-                    </div>
+<head>
+  <!-- Required Meta Tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Facemood Music</title>
+</head>
+
+<body>
+  
+  <header>
+    <h1>Welcome to Face Mood Music Selector</h1>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <h2>Smile!</h2>
+      <div id="container">
+        <video autoplay="true" id="videoElement">
+
+        </video>
+      </div>
+      <p>This app will take your picture, analyze it and play songs according to your mood. Please allow us to interact with
+        your camera and snap your picture</p>
+    </div>
+      <div class="row">
+
+        <div class="col-md-4">
+          <!-- For Siraj: This is where camera picture should go -->
+          <!-- Question: do we need to limit the size by width and height -->
+          <img src="assets/Images/bg-image3.gif" alt="spinning head" id="spinning-head-image">
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+            <h3>Song selection provided by Pandora:</h3>
+          </div>
+
+          <ul id="songs">
+            <!-- Here goes the list of songs -->
+          </ul>
+        </div>
+      </div>
+
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary" id="playBtn">PLAY</button>
+        <button type="button" class="btn btn-secondary" id="pauseBtn">PAUSE</button>
+      </div>
+
+      <!-- To Do : Jay.  Should I add forward-backward?
 
 
-        <!-- Importing Various JS Libs -->
-        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-        <script type="text/javascript" src="assets/javascript/camera.js"></script>
-        <script type="text/javascript" src="assets/javascript/face.js"></script>
-        <script type="text/javascript" src="assets/javascript/music.js"></script>
-    </body>
+  </div>
+
+<!-- Importing Various JS Libs -->
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+<script type="text/javascript" src="assets/javascript/camera.js"></script>
+<script type="text/javascript" src="assets/javascript/face.js"></script>
+<script type="text/javascript" src="assets/javascript/music.js"></script>
+</body>
+
 </html>

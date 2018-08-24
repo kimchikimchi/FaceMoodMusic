@@ -23,7 +23,7 @@ $.ajax({
     type: 'GET',
     url: 'https://deezerdevs-deezer.p.mashape.com/search',
     data: {
-        q: 'happy'
+        q: 'sleepy'
     },
     headers: {
         'X-Mashape-Key': 'X5MJlUMUCkmshf6HrBRNBXlx0XEzp1JPUi5jsnQAcws16kSuXo'
@@ -31,7 +31,7 @@ $.ajax({
 }).then(function(response){
 //    console.log(response);
     var songlist = response.data;
-    var maxNumSongs = 10;
+    var maxNumSongs = 5;
 
 
     // Limiting number of songs listed.
