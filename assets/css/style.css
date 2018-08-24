@@ -12,8 +12,13 @@
     float:left;
 }
 
-#songs a{
+#songs, a{
   background-color: rgba(0,0,0,0.2);
+  max-height: 300px;
+  margin-bottom: 10px;
+  padding-left: 0px;
+  overflow:scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 #myOnlineCamera button {
@@ -44,18 +49,18 @@ body {
     background-size: cover;
     /* Box-model */
     padding: 0;
-  
+
     /* Positioning */
     margin: 0;
     font-family: Georgia, "Times New Roman", Times, serif;
-  
+
     /* Typography */
     font-size: 18px;
     line-height: 150%;
     color: #333;
     margin: auto;
     max-width: 960px;
-  
+
     /* Visual */
 
       animation: colorchange 50s infinite; /* animation-name followed by duration in seconds*/
@@ -80,60 +85,60 @@ body {
       75%  {background: rgb(195, 247, 195);}
       100%   {background: rgb(238, 200, 200);}
     }
-  
+
   header {
     background: #d21034;
   }
-  
+
   h1 {
     /* Box-model */
     padding: 20px 0;
-  
+
     /* Positioning */
     margin: 0;
     margin-bottom: 20px;
     font-size: 28px;
-  
+
     /* Typography */
     color: #eee;
     text-align: center;
-  
+
     /* Visual */
     background: #333;
   }
-  
+
   h2 {
     font-size: 24px;
   }
-  
+
   .container {
     /* Box-model */
     width: 1024px;
-  
+
     /* Positioning */
     margin: 0 auto;
   }
-  
+
   #intro-image {
     float: left;
   }
-  
+
   #main-intro {
     width: 70%;
   }
-  
+
   .col-md-8 {
     width: 30%;
     /* background-image: url("../Images/bg-image4.gif") */
   }
-  
+
   #intro-image {
     /* Box-model */
     width: 200px;
     height: 200px;
-  
+
     /* Positioning */
-  
+
     margin-right: 20px;
   }
 
@@ -141,4 +146,3 @@ body {
     max-width: 300px;
     float: left
   }
-

@@ -31,7 +31,7 @@ $.ajax({
 }).then(function(response){
 //    console.log(response);
     var songlist = response.data;
-    var maxNumSongs = 5;
+    var maxNumSongs = 20;
 
 
     // Limiting number of songs listed.
@@ -92,7 +92,7 @@ function loadNextSong() {
 
 function loadPreviousSong() {
     var song;
-    console.log("Current song number is " + currentSongNum);
+    //console.log("Current song number is " + currentSongNum);
 
     // No song before first song?
     if (currentSongNum > 0 ) {
@@ -104,7 +104,6 @@ function loadPreviousSong() {
         song = playList[currentSongNum];
         $("#song_" + song.id).addClass("active");
         audio.setAttribute("src", song.preview_url);
-
     }
 }
 
