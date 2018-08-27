@@ -1,3 +1,115 @@
+
+/*
+Each of these CSS elements is associated with an HTML Element, Class, or ID.
+Flip between this CSS file and the HTML to see how things line up.
+Experiment with deleting lines of code from the CSS to see how it affects the web page when you refresh in the browser.
+*/
+
+body {
+    /* background-image: url('../Images/bg-image3.gif'); */
+    background-size: cover;
+    /* Box-model */
+    padding: 0;
+
+    /* Positioning */
+    margin: 0;
+    font-family: Georgia, "Times New Roman", Times, serif;
+
+    /* Typography */
+    font-size: 18px;
+    line-height: 150%;
+    color: #333;
+    margin: auto;
+    max-width: 960px;
+
+    /* Visual */
+
+      animation: colorchange 50s infinite; /* animation-name followed by duration in seconds*/
+         /* you could also use milliseconds (ms) or something like 2.5s */
+      -webkit-animation: colorchange 50s infinite; /* Chrome and Safari */
+}
+
+@keyframes colorchange
+{
+  0%   {background: rgb(243, 191, 191);}
+  25%  {background: rgb(248, 248, 194);}
+  50%  {background: rgb(196, 196, 245);}
+  75%  {background: rgb(195, 247, 195);}
+  100%   {background: rgb(238, 200, 200);}
+}
+
+@-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+{
+  0%   {background: rgb(243, 191, 191);}
+  25%  {background: rgb(248, 248, 194);}
+  50%  {background: rgb(196, 196, 245);}
+  75%  {background: rgb(195, 247, 195);}
+  100%   {background: rgb(238, 200, 200);}
+}
+
+header {
+background: #d21034;
+}
+
+h1 {
+/* Box-model */
+padding: 20px 0;
+
+/* Positioning */
+margin: 0;
+margin-bottom: 20px;
+font-size: 28px;
+
+/* Typography */
+color: #eee;
+text-align: center;
+
+/* Visual */
+background: #333;
+}
+
+h2 {
+font-size: 24px;
+}
+
+.container {
+/* Box-model */
+width: 1024px;
+
+/* Positioning */
+margin: 0 auto;
+}
+
+.col-md-8 {
+width: 30%;
+/* background-image: url("../Images/bg-image4.gif") */
+}
+
+#intro-image {
+float: left;
+}
+
+#main-intro {
+width: 70%;
+}
+
+#intro-image {
+/* Box-model */
+width: 200px;
+height: 200px;
+
+/* Positioning */
+
+margin-right: 20px;
+}
+
+#spinning-head-image {
+max-width: 300px;
+float: left
+}
+
+/* The following are camera specific */
+
 #myOnlineCamera video {
     width:320px;
     height:240px;
@@ -38,111 +150,3 @@
     height: 200px;
     background-color: #666;
 }
-/*
-Each of these CSS elements is associated with an HTML Element, Class, or ID.
-Flip between this CSS file and the HTML to see how things line up.
-Experiment with deleting lines of code from the CSS to see how it affects the web page when you refresh in the browser.
-*/
-
-body {
-    /* background-image: url('../Images/bg-image3.gif'); */
-    background-size: cover;
-    /* Box-model */
-    padding: 0;
-
-    /* Positioning */
-    margin: 0;
-    font-family: Georgia, "Times New Roman", Times, serif;
-
-    /* Typography */
-    font-size: 18px;
-    line-height: 150%;
-    color: #333;
-    margin: auto;
-    max-width: 960px;
-
-    /* Visual */
-
-      animation: colorchange 50s infinite; /* animation-name followed by duration in seconds*/
-         /* you could also use milliseconds (ms) or something like 2.5s */
-      -webkit-animation: colorchange 50s infinite; /* Chrome and Safari */
-    }
-
-    @keyframes colorchange
-    {
-      0%   {background: rgb(243, 191, 191);}
-      25%  {background: rgb(248, 248, 194);}
-      50%  {background: rgb(196, 196, 245);}
-      75%  {background: rgb(195, 247, 195);}
-      100%   {background: rgb(238, 200, 200);}
-    }
-
-    @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
-    {
-      0%   {background: rgb(243, 191, 191);}
-      25%  {background: rgb(248, 248, 194);}
-      50%  {background: rgb(196, 196, 245);}
-      75%  {background: rgb(195, 247, 195);}
-      100%   {background: rgb(238, 200, 200);}
-    }
-
-  header {
-    background: #d21034;
-  }
-
-  h1 {
-    /* Box-model */
-    padding: 20px 0;
-
-    /* Positioning */
-    margin: 0;
-    margin-bottom: 20px;
-    font-size: 28px;
-
-    /* Typography */
-    color: #eee;
-    text-align: center;
-
-    /* Visual */
-    background: #333;
-  }
-
-  h2 {
-    font-size: 24px;
-  }
-
-  .container {
-    /* Box-model */
-    width: 1024px;
-
-    /* Positioning */
-    margin: 0 auto;
-  }
-
-  #intro-image {
-    float: left;
-  }
-
-  #main-intro {
-    width: 70%;
-  }
-
-  .col-md-8 {
-    width: 30%;
-    /* background-image: url("../Images/bg-image4.gif") */
-  }
-
-  #intro-image {
-    /* Box-model */
-    width: 200px;
-    height: 200px;
-
-    /* Positioning */
-
-    margin-right: 20px;
-  }
-
-  #spinning-head-image {
-    max-width: 300px;
-    float: left
-  }
