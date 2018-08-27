@@ -1,16 +1,21 @@
 // Based on doc at https://market.mashape.com/deezerdevs/deezer-1#-search
-/*
-Just requires x-mashape-key.
 
-curl --get --include 'https://deezerdevs-deezer.p.mashape.com/search?q=happy' \
-  -H 'X-Mashape-Key: X5MJlUMUCkmshf6HrBRNBXlx0XEzp1JPUi5jsnQAcws16kSuXo' \
-  -H 'Accept: text/plain'
-*/
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyBQ3XSp6xllAtJpABRyAU1TQntVygJDv60",
+    authDomain: "kimchikimchi-bootcamp-db1.firebaseapp.com",
+    databaseURL: "https://kimchikimchi-bootcamp-db1.firebaseio.com",
+    projectId: "kimchikimchi-bootcamp-db1",
+    storageBucket: "kimchikimchi-bootcamp-db1.appspot.com",
+    messagingSenderId: "930567075309"
+};
+firebase.initializeApp(config);
 
+var database = firebase.database();
+var dbRef = "FaceMoodMusic";
 var playList = [];
 var currentSongNum = undefined;
-var audio = document.createElement("audio");
-
+var audio = document.createElement("audio");  // HTML5 audio element
 
 function drawSongList(song) {
     var a = $('<a href="#" class="list-group-item list-group-item-action">');
@@ -19,46 +24,38 @@ function drawSongList(song) {
     $("#songs").append(a);
 }
 
-$.ajax({
-    type: 'GET',
-    url: 'https://deezerdevs-deezer.p.mashape.com/search',
-    data: {
-        q: 'sleepy'
-    },
-    headers: {
-        'X-Mashape-Key': 'X5MJlUMUCkmshf6HrBRNBXlx0XEzp1JPUi5jsnQAcws16kSuXo'
-    },
-}).then(function(response){
-//    console.log(response);
-    var songlist = response.data;
-    var maxNumSongs = 20;
+function getMusicPlayList(emotion) {
+    $.ajax({
+        type: 'GET',
+        url: 'https://deezerdevs-deezer.p.mashape.com/search',
+        data: {
+            q: emotion,
+        },
+        headers: {
+            'X-Mashape-Key': 'X5MJlUMUCkmshf6HrBRNBXlx0XEzp1JPUi5jsnQAcws16kSuXo'
+        },
+    }).then(function(response){
+    //    console.log(response);
+        var songlist = response.data;
+        var maxNumSongs = 20;
 
+        // Limiting number of songs listed.
+        for (var index = 0; index < maxNumSongs; index++) {
+            var song = songlist[index];
+            var songObj = {
+                            id: song.id,
+                            title : song.title,
+                            preview_url: song.preview,
+                            artist_name: song.artist.name,
+                            album_title: song.album.title,
+                            album_cover: song.album.cover_small,
+                        };
 
-    // Limiting number of songs listed.
-    for (var index = 0; index < maxNumSongs; index++) {
-        var song = songlist[index];
-        var songObj = {
-                        id: song.id,
-                        title : song.title,
-                        preview_url: song.preview,
-                        artist_name: song.artist.name,
-                        album_title: song.album.title,
-                        album_cover: song.album.cover_small,
-                    };
-
-        //console.log(songObj);
-
-        // To Do: Render song list html
-        drawSongList(songObj);
-
-        playList.push(songObj);
-        // To Do: Add playlist to be played via HTML audio tag.
-        // makeSongPlayist(songObj);
-    }
-});
-
-
-// Based on audio play logic at https://stackoverflow.com/questions/8489710/play-an-audio-file-using-jquery-when-a-button-is-clicked
+            //console.log(songObj);
+            drawSongList(songObj);
+            playList.push(songObj);
+    });
+}
 
 function loadNextSong() {
     var song;
@@ -107,12 +104,18 @@ function loadPreviousSong() {
     }
 }
 
+function recordCurrentTrackNum() {
+    database.ref(dbRef).set({
+        currentTrack : currentSongNum,
+    });
+}
 
 $("#playBtn").on("click", function(event) {
     // When music is simply paused before,
     // src will be populated
     if ( audio.getAttribute('src') === null ) {
         loadNextSong();
+        recordCurrentTrackNum();
     }
 
     audio.play();
@@ -125,17 +128,23 @@ $("#pauseBtn").on("click", function(event) {
 $("#prevBtn").on("click", function(event){
     audio.pause();
     loadPreviousSong();
+    recordCurrentTrackNum();
     audio.play();
 });
 
 $("#nextBtn").on("click", function(event){
     audio.pause();
     loadNextSong();
+    recordCurrentTrackNum();
     audio.play();
 });
 
 // When the current song is over, play next
 audio.addEventListener('ended', function() {
     loadNextSong();
+    recordCurrentTrackNum();
     this.play();
 }, false);
+
+// Unit Test call
+getMusicPlayList('sad');
