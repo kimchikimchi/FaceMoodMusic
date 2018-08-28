@@ -111,6 +111,13 @@ function recordCurrentTrackNum() {
     });
 }
 
+function resetPlayList(){
+    audio.removeAttribute("src", "");
+    playList = [];
+    currentSongNum = undefined;
+    $("#songs").empty();
+}
+
 $("#playBtn").on("click", function(event) {
     // When music is simply paused before,
     // src will be populated
@@ -148,4 +155,4 @@ audio.addEventListener('ended', function() {
 }, false);
 
 // Unit Test call
-getMusicPlayList('sad');
+//getMusicPlayList('sad');

@@ -88,6 +88,10 @@ function processImage() {
         console.log("Emotions: " + JSON.stringify(emotions));
         console.log("Strongest Emotion: " + strongestEmotion);
         $("#resultEmotion").text(strongestEmotion);
+
+        // Calling music playlist.
+        resetPlayList();
+        getMusicPlayList(strongestEmotion);
     })
 
     .fail(function(jqXHR, textStatus, errorThrown) {
