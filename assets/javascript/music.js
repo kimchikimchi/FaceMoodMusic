@@ -13,9 +13,11 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 var dbRef = "FaceMoodMusic";
+var emotionCaptured = undefined;
 var playList = [];
 var currentSongNum = undefined;
 var audio = document.createElement("audio");  // HTML5 audio element
+var on_value_callback;
 
 function drawSongList(song) {
     var a = $('<a href="#" class="list-group-item list-group-item-action">');
@@ -24,7 +26,9 @@ function drawSongList(song) {
     $("#songs").append(a);
 }
 
-function getMusicPlayList(emotion) {
+function getMusicPlayList(emotion, faceId) {
+    emotionCaptured = emotion;
+
     $.ajax({
         type: 'GET',
         url: 'https://deezerdevs-deezer.p.mashape.com/search',
@@ -55,6 +59,15 @@ function getMusicPlayList(emotion) {
             drawSongList(songObj);
             playList.push(songObj);
         }
+
+        // Turn off listener after the initial run or we gonna loop
+        database.ref(dbRef).off("value", on_value_callback);
+
+        // If recoverig from last session.
+        if (currentSongNum != undefined) {
+            loadNextSong();
+        }
+
     });
 }
 
@@ -107,6 +120,7 @@ function loadPreviousSong() {
 
 function recordCurrentTrackNum() {
     database.ref(dbRef).set({
+        emotionCaptured : emotionCaptured,
         currentTrack : currentSongNum,
     });
 }
@@ -153,6 +167,29 @@ audio.addEventListener('ended', function() {
     recordCurrentTrackNum();
     this.play();
 }, false);
+
+$(document).ready( function() {
+
+    console.log("Checking ");
+    // Checking to see whether there was previous playList
+    // If there is, pull the list and set the current list back
+    // to the last one
+     on_value_callback = database.ref(dbRef).on("value", function(snapshot) {
+        console.log(snapshot.val());
+        if (snapshot.val() != undefined) {
+            //alert("connected");
+
+            emotionCaptured = snapshot.val().emotionCaptured;
+            currentSongNum = snapshot.val().currentTrack;
+            getMusicPlayList(emotionCaptured);
+        } else {
+            //alert("not connected");
+        }
+    });
+
+
+
+});
 
 // Unit Test call
 //getMusicPlayList('sad');
