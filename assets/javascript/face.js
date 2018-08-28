@@ -1,6 +1,7 @@
 var emotions;
 var strongestEmotion;
 var userGender;
+var faceId;      // unique ID per face/person.  Valid only for 24 hrs for free Azure tier.
 var video = document.querySelector("#videoElement");
 var canvas = document.querySelector("#myCanvas");
 var button = document.querySelector("#btnCapture");
@@ -83,6 +84,8 @@ function processImage() {
         $("#responseTextArea").val(JSON.stringify(data, null, 2));
         userGender = data[0].faceAttributes.gender;
         emotions = data[0].faceAttributes.emotion;
+        faceId = data[0].faceId;
+
         strongestEmotion = Object.keys(emotions).reduce((a, b) => emotions[a] > emotions[b] ? a : b);            console.log("Data: " + data[0]);
         console.log("Gender: " + userGender);
         console.log("Emotions: " + JSON.stringify(emotions));
@@ -91,7 +94,7 @@ function processImage() {
 
         // Calling music playlist.
         resetPlayList();
-        getMusicPlayList(strongestEmotion);
+        getMusicPlayList(strongestEmotion, faceId);
     })
 
     .fail(function(jqXHR, textStatus, errorThrown) {
