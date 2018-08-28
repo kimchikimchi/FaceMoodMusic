@@ -54,6 +54,7 @@ function getMusicPlayList(emotion) {
             //console.log(songObj);
             drawSongList(songObj);
             playList.push(songObj);
+        }
     });
 }
 

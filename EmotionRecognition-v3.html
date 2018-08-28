@@ -21,8 +21,9 @@
     Strongest Emotion: <strong><span id="resultEmotion"></span></strong>
 </div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="assets/javascript/face.js"></script>
 <script type="text/javascript">
-
+/*
     var emotions;
     var strongestEmotion;
     var userGender;
@@ -32,7 +33,7 @@
     var apiData;
 
     window.onload = function(){
-    if (navigator.mediaDevices.getUserMedia) {       
+    if (navigator.mediaDevices.getUserMedia) {
         navigator.mediaDevices.getUserMedia({video: true})
         .then(function(stream) {
             video.srcObject = stream;
@@ -46,7 +47,7 @@
     button.onclick = function(){
         canvas.width = video.videoWidth;
         canvas.height = video.videoHeight;
-        canvas.getContext('2d').drawImage(video, 0, 0);            
+        canvas.getContext('2d').drawImage(video, 0, 0);
         apiData = canvas.toDataURL('image/png');
         console.log("apiData: " + apiData);
     }
@@ -114,7 +115,7 @@
             console.log("Strongest Emotion: " + strongestEmotion);
             $("#resultEmotion").text(strongestEmotion);
         })
-        
+
         .fail(function(jqXHR, textStatus, errorThrown) {
             // Display error message.
             var errorString = (errorThrown === "") ?
@@ -126,6 +127,7 @@
             alert(errorString);
         });
     };
+*/
 </script>
 
 </body>
