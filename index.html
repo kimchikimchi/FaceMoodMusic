@@ -21,21 +21,20 @@
 
   <div class="container">
     <div class="row">
-      <h2>Smile!</h2>
-      <div id="container">
-        <div class="col-md-6">
+        <div class="col-md-2">
+          <h2>Smile!</h2>
+        </div>
+        <div class="col-md-4">
           <video autoplay="true" id="videoElement" height="200" width="200">
           </video>
           <canvas id="myCanvas" style="display:none"></canvas>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div>
-          <button id="btnCapture">Capture Image</button>
-          <button onclick="processImage()">Analyze face</button>
-          <br>
-          <br>
+        <div class="col-md-6">
+          <div>
+            <button id="btnCapture">Capture Image</button>
+            <button onclick="processImage()">Analyze face</button>
         </div>
+
         <div>
           Strongest Emotion:
           <strong>

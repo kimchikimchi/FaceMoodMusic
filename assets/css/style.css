@@ -120,12 +120,7 @@ float: left
     margin:30px;
 }
 
-#container {
-    margin: 0px auto;
-    width: 200px;
-    height: 200px;
-    padding: 0px;
-}
+
 #videoElement {
     width: 200px;
     height: 200px;
@@ -138,42 +133,16 @@ video {
 
 /* media query settings*/
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 350px) {
   
-  #container {
-    /* Box-model */
-    width: 80%;
-    padding: 20px;
-  }
-.col-md-8 {
-    float: right;
-    width: 50%;
-}
-
-}
-
-/* Additional Screen Sizes */
-
-/* Width at 320px and below */
-@media screen and (max-width: 320px) {
-
-  #container {
-    /* Box-model */
-    width: 80%;
-    padding: 20px;
-  }
-
-
-}
-
-/* Width at 168px and below */
-@media screen and (max-width: 168px) {
-  
-  #container {
-    /* Box-model */
-    width: 80%;
-    padding: 20px;
-  }
+    #spinning-head-image {
+        max-width: 75%;
+    }  
+    #videoElement {
+        max-width: 150px;
+        max-height: 150px;
+        background-color: #666;
+    }
 
  
 }
