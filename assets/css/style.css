@@ -6,13 +6,7 @@ Experiment with deleting lines of code from the CSS to see how it affects the we
 */
 
 body {
-    /* background-image: url('../Images/bg-image3.gif'); */
-    background-size: cover;
-    /* Box-model */
-    padding: 0;
-
-    /* Positioning */
-    margin: 0;
+   
     font-family: Georgia, "Times New Roman", Times, serif;
 
     /* Typography */
@@ -74,34 +68,22 @@ font-size: 24px;
 
 .container {
 /* Box-model */
-width: 1024px;
+width: 100%;
 
 /* Positioning */
 margin: 0 auto;
 }
 
-.col-md-8 {
+p1 {
+    background-color: beige;
+    padding: 20px;
+}
+
+.col-md-6 {
 width: 30%;
 /* background-image: url("../Images/bg-image4.gif") */
 }
 
-#intro-image {
-float: left;
-}
-
-#main-intro {
-width: 70%;
-}
-
-#intro-image {
-/* Box-model */
-width: 200px;
-height: 200px;
-
-/* Positioning */
-
-margin-right: 20px;
-}
 
 #spinning-head-image {
 max-width: 300px;
@@ -138,15 +120,29 @@ float: left
     margin:30px;
 }
 
-#container {
-    margin: 0px auto;
-    width: 200px;
-    height: 200px;
-    padding: 0px;
-    border: 10px #333 solid;
-}
+
 #videoElement {
     width: 200px;
     height: 200px;
     background-color: #666;
+}
+
+video {
+    border: 10px #333 solid;    
+}
+
+/* media query settings*/
+
+@media screen and (max-width: 350px) {
+  
+    #spinning-head-image {
+        max-width: 75%;
+    }  
+    #videoElement {
+        max-width: 150px;
+        max-height: 150px;
+        background-color: #666;
+    }
+
+ 
 }
