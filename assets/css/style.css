@@ -6,7 +6,7 @@ Experiment with deleting lines of code from the CSS to see how it affects the we
 */
 
 body {
-   
+
     font-family: Georgia, "Times New Roman", Times, serif;
 
     /* Typography */
@@ -127,22 +127,26 @@ float: left
     background-color: #666;
 }
 
+#faceBlurb {
+    padding-left: 15px;
+}
+
 video {
-    border: 10px #333 solid;    
+    border: 10px #333 solid;
 }
 
 /* media query settings*/
 
 @media screen and (max-width: 350px) {
-  
+
     #spinning-head-image {
         max-width: 75%;
-    }  
+    }
     #videoElement {
         max-width: 150px;
         max-height: 150px;
         background-color: #666;
     }
 
- 
+
 }
