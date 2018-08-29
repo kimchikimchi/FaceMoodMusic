@@ -20,25 +20,30 @@
   </header>
 
   <div class="container">
-    <div class="row">
-
-      <h2>Smile!</h2>
-      <div id="container">
-        <video autoplay="true" id="videoElement" height="200" width="200">
-        </video>
-        <canvas id="myCanvas" style="display:none"></canvas>
-      </div>
-      <div>
-          <button type="button" class="btn btn-secondary" onclick="processImage()">Click to Capture</button>
-      </div>
       <div class="row">
-        <br>
-        <br>
-        <p1>This app will take your picture, analyze it and play songs according to your mood. Please allow us to interact with
-          your camera and snap your picture</p1>
-        <br>
-        <br>
-      </div>
+
+          <div class="col-md-2">
+              <h2>Smile!</h2>
+          </div>
+          <div class="col-md-4">
+              <video autoplay="true" id="videoElement" height="200" width="200">
+              </video>
+              <canvas id="myCanvas" style="display:none"></canvas>
+          </div>
+          <div class="col-md-1">
+          </div>
+          <div class="col-md-5">
+              <button type="button" class="btn btn-secondary" onclick="processImage()">Click to Capture</button>
+
+          </div>
+          <div class="row">
+              <br>
+              <br>
+              <p1>This app will take your picture, analyze it and play songs according to your mood. Please allow us to interact with
+                  your camera and snap your picture</p1>
+                  <br>
+                  <br>
+              </div>
     </div>
     <div class="row">
 
@@ -49,7 +54,7 @@
       </div>
       <div class="col-md-8">
         <div class="row">
-          <h3>Song selection provided by Deezer Music</h3>
+          <h3 id="faceBlurb">Song selection provided by Deezer Music</h3>
         </div>
 
         <ul id="songs">

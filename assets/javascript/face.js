@@ -48,6 +48,13 @@ var makeblob = function (dataURL) {
     return new Blob([uInt8Array], { type: contentType });
 }
 
+function updateEmotionText (emotion) {
+    emotion = emotion.charAt(0).toUpperCase() + emotion.slice(1);
+    $("#faceBlurb").empty();
+
+    $("#faceBlurb").text(`${emotion} music provided by Deezer Music` )
+}
+
 function processImage() {
     var subscriptionKey = "9941ab0052184dd0bda55396f3b58859";
     var uriBase = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
@@ -96,6 +103,7 @@ function processImage() {
         // Calling music playlist.
         resetPlayList();
         getMusicPlayList(strongestEmotion, faceId);
+        updateEmotionText(strongestEmotion);
     })
 
     .fail(function(jqXHR, textStatus, errorThrown) {
