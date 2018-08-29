@@ -4,7 +4,6 @@ var userGender;
 var faceId;      // unique ID per face/person.  Valid only for 24 hrs for free Azure tier.
 var video = document.querySelector("#videoElement");
 var canvas = document.querySelector("#myCanvas");
-var button = document.querySelector("#btnCapture");
 var apiData;
 
 window.onload = function(){
@@ -19,7 +18,7 @@ window.onload = function(){
     }
 }
 
-button.onclick = function(){
+function captureImage() {
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
     canvas.getContext('2d').drawImage(video, 0, 0);
@@ -59,6 +58,8 @@ function processImage() {
         "age,gender,headPose,smile,facialHair,glasses,emotion," +
         "hair,makeup,occlusion,accessories,blur,exposure,noise"
     };
+
+    captureImage();
 
     // Perform the REST API call.
     $.ajax({
